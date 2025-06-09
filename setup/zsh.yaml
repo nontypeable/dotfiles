@@ -1,0 +1,9 @@
+---
+- clean: ["~"]
+
+- shell:
+    - command: |
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
+      description: Oh-My-Zsh installation
+      stdout: true
+      stderr: true
