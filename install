@@ -24,7 +24,7 @@ run_dotbot() {
 }
 
 setup_files=(
-  "setup/zsh.yaml"
+  "setup/terminal.yaml"
 )
 
 for file in "${setup_files[@]}"; do
