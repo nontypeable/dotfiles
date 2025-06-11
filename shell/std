@@ -1,0 +1,10 @@
+_color_stderr_bold() {
+  emulate -LR zsh
+
+  local stderr_color=$'\e[1;31m'
+  local reset_color=$'\e[0m'
+
+  while sysread; do
+    syswrite -o 2 "${stderr_color}${REPLY}${reset_color}"
+  done
+}

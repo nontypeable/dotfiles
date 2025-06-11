@@ -1,0 +1,51 @@
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="false"
+
+# Commands starting from " " (whitespace) won't be saved in history:
+HIST_IGNORE_SPACE="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details. HIST_STAMPS="yyyy-mm-dd"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(sudo git docker pass)
+
+if [ -f ${HOME}/.zplug/init.zsh ]; then
+  source ${HOME}/.zplug/init.zsh
+fi
+
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Sourcing the Oh-My-ZSH source:
+source "$ZSH/oh-my-zsh.sh"
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin:$HOME/.local/bin"
+
+export ZPLUG_HOME="$HOME/.zplug"
+source "$HOME/.zplugrc"
+
+source "$HOME/.shell/std"
+source "$HOME/.shell/exports"
+source "$HOME/.shell/aliases"
+source "$HOME/.shell/external"
+source "$HOME/.shell/completions"
+
+export PATH

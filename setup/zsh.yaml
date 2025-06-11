@@ -2,18 +2,27 @@
 - clean: ["~"]
 
 - shell:
-    - command: |
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
-      description: Oh-My-Zsh installation
-      stdout: true
-      stderr: true
+      - command: |
+            sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
+        description: Install Oh-My-Zsh
+        stdout: true
+        stderr: true
+      - command: |
+            curl -fsS https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh || true
+        description: zplug installation
+        stdout: true
+        stderr: true
 
-    - command: |
-        export ZPLUG_HOME="${ZPLUG_HOME:-$HOME/.zplug}"
-        if [[ ! -d $ZPLUG_HOME ]]; then
-          curl -sL --proto-redir 'all,https' \
-            https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-        fi
-      description: zplug installation
-      stdout: true
-      stderr: true
+- link:
+      ~/.shell:
+          path: shell
+          create: true
+      ~/.zshrc:
+          path: config/zshrc
+          force: true
+      ~/.zshenv:
+          path: config/zshenv
+          force: true
+      ~/.zplugrc:
+          path: config/zplugrc
+          force: true

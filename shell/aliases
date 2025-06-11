@@ -1,0 +1,5 @@
+# Displays directories from the top, uses special characters to display the file type.
+alias ls='ls --color --human-readable --group-directories-first --classify'
+
+# Copies the output to the clipboard.
+alias copy='wl-copy | echo "=> Output copied to pasteboard."'

@@ -1,0 +1,27 @@
+source "$ZPLUG_HOME/repos/Aloxaf/fzf-tab/fzf-tab.plugin.zsh"
+
+# Enable hidden files on completion.
+setopt globdots
+
+# Use default FZF opts
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+
+# Disable standard completion menu
+zstyle ':completion:*' menu no
+
+# Enable hidden files for completion
+zstyle ':completion:*' special-dirs true
+
+# Hide extra files in completions
+zstyle ':completion:*' ignore-parents 'parent pwd directory'
+zstyle ':completion:*' ignored-patterns '.|**/.|..|**/..|**/.git'
+
+# Switch between groups using `[` and `]`
+zstyle ':fzf-tab:*' switch-group '[' ']'
+
+# Setting up preview for complete for specific commands
+zstyle ':fzf-tab:complete:(\\|*/|)(ls|cat|bat|cd|rm|cp|mv|ln|nvim|tail|tree|source):*' fzf-preview '_fzf_complete_realpath "$realpath"'
+
+# Completions for `killall`
+zstyle ':completion:*:*:killall:*:*' command 'ps -u "$USERNAME" -o comm'
+zstyle ':fzf-tab:complete:(\\|*/|)killall:*' fzf-preview 'ps aux | ag "$word" | _fzf_complete_realpath'

@@ -1,0 +1,18 @@
+user_binary_paths=(
+  "$HOME/go/bin"
+  "$HOME/.cargo/bin"
+  "$HOME/.local/bin"
+)
+
+# Prepend each to PATH if it exists and not already included
+for p in "${user_binary_paths[@]}"; do
+  [[ -d "$p" && ":$PATH:" != *":$p:"* ]] && PATH="$p:$PATH"
+done
+
+# Editor
+export EDITOR="$(which nvim)"
+
+# GPG
+export GPG_TTY="$(tty)" # for pinentry
+
+export PATH # This should be the last line
