@@ -27,3 +27,13 @@
       ~/.zplugrc:
           path: config/zplugrc
           force: true
+
+      # GPG
+      ~/.gnupg/gpg-agent.conf:
+          path: config/gpg-agent.conf
+          force: true
+          create: true
+      ~/.gnupg/gpg.conf:
+          path: config/gpg.conf
+          force: true
+          create: true
