@@ -50,3 +50,4 @@ else
 fi
 
 source "$HOME/.shell/exports"
+source "$HOME/.shell/aliases"

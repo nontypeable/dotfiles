@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# `aliases` is used to provide custom aliases.
+
+# Displays directories from the top, uses special characters to display the file type.
+alias ls="gls --color --human-readable --group-directories-first --classify"
+
+# Copies the output to the clipboard (macOS: pbcopy, Linux: wl-copy)
+alias copy='if [[ "$OSTYPE" == "darwin"* ]]; then pbcopy; else wl-copy; fi && echo "=> Output copied to pasteboard."'
+
+# Lock the screen
+alias afk='osascript -e "tell application \"System Events\" to keystroke \"q\" using {control down, command down}"'
