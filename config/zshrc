@@ -1,0 +1,44 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load.
+ZSH_THEME="robbyrussell"
+
+# Uncomment the following line to use case-sensitive completion.
+CASE_SENSITIVE="false"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+HYPHEN_INSENSITIVE="false"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS='yyyy-mm-dd'
+
+# Commands starting from " " (whitespace) won't be saved in history:
+HIST_IGNORE_SPACE="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git docker docker-compose)
+
+# Sourcing the Oh-My-ZSH source:
+source "$ZSH/oh-my-zsh.sh"
+
+if [[ "$(uname)" == "Darwin" ]]; then
+	# macOS
+	if [ -d "/opt/homebrew/bin" ]; then
+		export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/.local/bin"
+	else
+		export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:$HOME/.local/bin"
+	fi
+else
+	# other systems
+	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin:$HOME/.local/bin"
+fi
+
+export PATH

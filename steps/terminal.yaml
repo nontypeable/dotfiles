@@ -16,6 +16,11 @@
     ~/.bashrc:
       path: config/bashrc
       force: true
+
+    ~/.zshrc:
+      path: config/zshrc
+      force: true
+
     ~/.hushlogin:
       path: config/hushlogin
       force: true
