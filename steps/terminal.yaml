@@ -1,0 +1,10 @@
+---
+- clean: ["~"]
+
+- link:
+    ~/.bash_profile:
+      path: config/bash_profile
+      force: true
+    ~/.bashrc:
+      path: config/bashrc
+      force: true

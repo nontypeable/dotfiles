@@ -21,7 +21,9 @@ run_dotbot() {
 		-c "$config" "${ARGS[@]}"
 }
 
-dotbot_configs=()
+dotbot_configs=(
+	"steps/terminal.yaml"
+)
 
 for config in "${dotbot_configs[@]}"; do
 	run_dotbot "$config"
