@@ -26,8 +26,16 @@ HIST_IGNORE_SPACE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker docker-compose)
 
-# Sourcing the Oh-My-ZSH source:
+export ZPLUG_HOME="$HOME/.zplug"
+if [ -f "$ZPLUG_HOME/init.zsh" ]; then
+	source "$ZPLUG_HOME/init.zsh"
+fi
+
 source "$ZSH/oh-my-zsh.sh"
+
+if [ -f "$HOME/.zplugrc" ]; then
+	source "$HOME/.zplugrc"
+fi
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	# macOS
@@ -40,5 +48,3 @@ else
 	# other systems
 	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin:$HOME/.local/bin"
 fi
-
-export PATH

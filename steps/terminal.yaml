@@ -26,6 +26,9 @@
     ~/.zshrc:
       path: config/zshrc
       force: true
+    ~/.zplugrc:
+      path: config/zplugrc
+      force: true
 
     ~/.hushlogin:
       path: config/hushlogin

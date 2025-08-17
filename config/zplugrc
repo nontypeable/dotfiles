@@ -1,0 +1,13 @@
+[[ -f "$ZPLUG_HOME/init.zsh" ]] && source "$ZPLUG_HOME/init.zsh"
+
+# Plugins
+zplug 'Aloxaf/fzf-tab', depth:1 # Must be the first one
+
+# Install missing plugins
+if ! zplug check --verbose; then
+	echo "Installing missing plugins..."
+	zplug install
+fi
+
+# Load plugins
+zplug load
