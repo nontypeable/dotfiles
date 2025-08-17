@@ -48,3 +48,5 @@ else
 	# other systems
 	export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin:$HOME/.local/bin"
 fi
+
+source "$HOME/.shell/exports"

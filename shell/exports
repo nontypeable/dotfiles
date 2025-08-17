@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+
+# `exports` is used to provide custom variables.
+
+if [[ "$(uname)" == "Darwin" ]]; then
+	# This is required because `openssl` is keg-only in `brew`,
+	export LDFLAGS="-L$(brew --prefix)/opt/openssl/lib"
+	export CPPFLAGS="-I$(brew --prefix)/opt/openssl/include"
+	export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+	export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig"
+fi
+
+# --- PATH modifications ---
+
+# GPG agent:
+PATH="/usr/local/opt/gpg-agent/bin:$PATH"
+
+# Adds `npm` binary files:
+PATH="/usr/local/share/npm/bin:$PATH"
+
+# Adds `go` binary files:
+PATH="$HOME/go/bin:$PATH"
+
+# Adds `cargo` binary files:
+PATH="$HOME/.cargo/bin:$PATH"
+
+# --- General ---
+
+# Editor:
+export EDITOR="$(which nvim)"
+
+# GPG:
+export GPG_TTY="$(tty)" # for pinentry
+
+# Homebrew:
+export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
+
+export PATH
