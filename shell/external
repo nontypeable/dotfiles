@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# `external` handles all complex external tools.
+
+if [[ ! "$PATH" == */opt/fzf/bin* ]]; then
+	export PATH="$PATH:$(brew --prefix)/opt/fzf/bin"
+	eval "$(fzf --zsh)"
+fi
+
+# Using `fd` for imporved file and directory search
+export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type=d --hidden --strip-cwd-prefix --exclude .git'
+
+export FZF_DEFAULT_OPTS='--layout=reverse-list --bind "ctrl-a:toggle" --bind "ctrl-h:change-preview-window(hidden|)" --cycle -i'
+export FZF_CTRL_T_OPTS='--preview "_fzf_complete_realpath {}"'
+export FZF_ALT_C_OPTS='--preview "_fzf_complete_realpath {}"'
+export FZF_CTRL_R_OPTS='--reverse'
