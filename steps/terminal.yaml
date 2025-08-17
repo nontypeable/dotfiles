@@ -1,11 +1,17 @@
 ---
 - clean: ["~"]
 
-# See https://ohmyz.sh
 - shell:
+    # See https://ohmyz.sh
     - command: |
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" || true
       description: Install Oh-My-Zsh
+      stdout: true
+      stderr: true
+    # See https://github.com/zplug/zplug
+    - command: |
+        curl -fsS https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh || true
+      description: Install zplug
       stdout: true
       stderr: true
 
