@@ -32,6 +32,14 @@ export EDITOR="$(which nvim)"
 # GPG:
 export GPG_TTY="$(tty)" # for pinentry
 
+# Java:
+if [[ -d "/opt/homebrew/opt/openjdk" ]]; then
+    export JAVA_HOME="/opt/homebrew/opt/openjdk"
+    export PATH="$JAVA_HOME/bin:$PATH"
+elif [[ -d "/usr/libexec/java_home" ]]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
 # Homebrew:
 export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
 
