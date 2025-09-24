@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+
+# `completions` handles all custom auto-completions.
+
+# --- zsh options ---
+setopt globdots # Enable hidden files in completion
+
+# --- fzf-tab settings ---
+zstyle ':fzf-tab:*' use-fzf-default-opts yes        # Use default fzf settings
+zstyle ':fzf-tab:*' switch-group '[' ']'            # Switch groups with [ and ]
+zstyle ':fzf-tab:*' query-string prefix input first # Better search performance
+
+# --- completion behavior ---
+zstyle ':completion:*' menu no              # Disable standard menu
+zstyle ':completion:*' special-dirs true    # Include special dirs
+zstyle ':completion:*' list-dirs-first true # Show directories first
+
+# --- file ignore patterns ---
+zstyle ':completion:*' ignore-parents 'parent pwd directory'
+zstyle ':completion:*' ignored-patterns ".|..|.DS_Store|.localized|**/.|**/..|**/.DS_Store|**/.localized|**/.git|**/node_modules|**/__pycache__|**/*.pyc"
+
+# --- file-based commands preview ---
+zstyle ":fzf-tab:complete:(ls|gls|cat|bat|code|rm|cp|mv|ln|nvim|vim|tail|head|less|more|source|file|find|grep|rg|ag|fd|sed|awk|touch|mkdir|chmod|chown):*" fzf-preview '_fzf_complete_realpath $realpath'
+
+# --- make completion ---
+zstyle ':fzf-tab:complete:make:*' fzf-preview \
+	'case "$group" in
+    "[make target]")
+        make -n "$word" 2>/dev/null | head -100 || echo "No preview for target: $word"
+        ;;
+    "[make variable]")
+        make -pq 2>/dev/null | grep -E "^$word\s*[?]?=" | head -20 || echo "Variable: $word"
+        ;;
+    "[file]")
+        _fzf_complete_realpath "$realpath"
+        ;;
+    esac'
+
+# --- man page preview ---
+zstyle ':fzf-tab:complete:man:*' fzf-preview \
+	'man -P cat "$word" 2>/dev/null | head -200 || echo "No man page for: $word"'
+
+# --- process/kill completion ---
+zstyle ':completion:*:*:kill:*:*' command 'ps -u $USER -o pid,user,comm'
+zstyle ':completion:*:*:killall:*:*' command 'ps -u $USER -o pid,user,comm'
+zstyle ':fzf-tab:complete:(kill|killall):*' fzf-preview \
+	'ps -p "${word## #}" -o pid,user,comm,args 2>/dev/null || ps aux | grep -i "$word" | head -20'
+
+# --- environment variables preview ---
+zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
+	fzf-preview 'echo "${(P)word}" | fold -w 80'
+
+# --- generic command completion ---
+# Enable basic completion for modern utilities that don't have native zsh completions
+compdef _gnu_generic fzf fd rg ag bat
