@@ -2,14 +2,6 @@
 
 # `exports` is used to provide custom variables.
 
-if [[ "$(uname)" == "Darwin" ]]; then
-	# This is required because `openssl` is keg-only in `brew`,
-	export LDFLAGS="-L$(brew --prefix)/opt/openssl/lib"
-	export CPPFLAGS="-I$(brew --prefix)/opt/openssl/include"
-	export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
-	export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig"
-fi
-
 # --- PATH modifications ---
 
 # GPG agent:
@@ -24,6 +16,26 @@ PATH="$HOME/go/bin:$PATH"
 # Adds `cargo` binary files:
 PATH="$HOME/.cargo/bin:$PATH"
 
+# --- macOS specific settings ---
+if [[ "$(uname)" == "Darwin" ]]; then
+	# This is required because `openssl` is keg-only in `brew`,
+	export LDFLAGS="-L$(brew --prefix)/opt/openssl/lib"
+	export CPPFLAGS="-I$(brew --prefix)/opt/openssl/include"
+	export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+	export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig"
+
+	# Java setup:
+	if [[ -d "/opt/homebrew/opt/openjdk" ]]; then
+		export JAVA_HOME="/opt/homebrew/opt/openjdk"
+		PATH="$JAVA_HOME/bin:$PATH"
+	elif /usr/libexec/java_home &>/dev/null; then
+		export JAVA_HOME=$(/usr/libexec/java_home)
+		PATH="$JAVA_HOME/bin:$PATH"
+	else
+		echo "Warning: No Java Runtime found."
+	fi
+fi
+
 # --- General ---
 
 # Editor:
@@ -31,14 +43,6 @@ export EDITOR="$(which nvim)"
 
 # GPG:
 export GPG_TTY="$(tty)" # for pinentry
-
-# Java:
-if [[ -d "/opt/homebrew/opt/openjdk" ]]; then
-    export JAVA_HOME="/opt/homebrew/opt/openjdk"
-    export PATH="$JAVA_HOME/bin:$PATH"
-elif [[ -d "/usr/libexec/java_home" ]]; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
 
 # Homebrew:
 export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
