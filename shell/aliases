@@ -9,4 +9,4 @@ alias ls="gls --color --human-readable --group-directories-first --classify"
 alias copy='if [[ "$OSTYPE" == "darwin"* ]]; then pbcopy; else wl-copy; fi && echo "=> Output copied to pasteboard."'
 
 # Lock the screen
-alias afk='osascript -e "tell application \"System Events\" to keystroke \"q\" using {control down, command down}"'
+alias afk='pmset displaysleepnow'
