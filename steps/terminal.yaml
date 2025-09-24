@@ -29,6 +29,9 @@
     ~/.zshrc:
       path: config/zshrc
       force: true
+    ~/.zshenv:
+      path: config/zshenv
+      force: true
     ~/.zplugrc:
       path: config/zplugrc
       force: true

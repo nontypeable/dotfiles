@@ -1,0 +1,50 @@
+_fzf_complete_realpath() {
+	# Used for `tab` completions.
+
+	local realpath="${1:--}" # read the first arg or stdin if arg is missing
+	local FZF_PREVIEW_COLUMNS=$(("${FZF_PREVIEW_COLUMNS:-80}" < 60 ? 60 : "${FZF_PREVIEW_COLUMNS:-80}"))
+	local tree_exclude='.DS_Store|.localized|.git|node_modules|__pycache__'
+
+	if [ "$realpath" = "-" ]; then
+		local stdin="$(</dev/stdin)"
+		echo "$stdin" | bat \
+			--color=always \
+			--plain \
+			--wrap=character \
+			--terminal-width="$FZF_PREVIEW_COLUMNS"
+		return
+	fi
+
+	if [ -d "$realpath" ]; then
+		tree -a -I "$tree_exclude" -C "$realpath" | head -100
+	elif [ -f "$realpath" ]; then
+		local mime="$(file -Lbs --mime-type "$realpath" 2>/dev/null || echo 'unknown')"
+		local category="${mime%%/*}"
+
+		local file_size=$(stat -f%z "$realpath" 2>/dev/null || stat -c%s "$realpath" 2>/dev/null || echo 0)
+		if [ "$file_size" -gt 10485760 ]; then
+			echo "File too large for preview (>10MB)"
+			return
+		fi
+
+		if [ "$category" = 'image' ] && command -v catimg &>/dev/null; then
+			catimg -r2 -w "$FZF_PREVIEW_COLUMNS" "$realpath"
+		elif [[ "$mime" =~ 'binary' ]] && command -v hexyl &>/dev/null; then
+			hexyl --length 5KiB \
+				--border none \
+				--terminal-width "$FZF_PREVIEW_COLUMNS" \
+				"$realpath"
+		elif command -v bat &>/dev/null; then
+			bat --number \
+				--color=always \
+				--plain \
+				--wrap=character \
+				--terminal-width="$FZF_PREVIEW_COLUMNS" \
+				"$realpath"
+		else
+			head -n 50 "$realpath"
+		fi
+	else
+		echo "$realpath" | fold -w "$FZF_PREVIEW_COLUMNS"
+	fi
+}
