@@ -36,6 +36,11 @@
       path: config/zplugrc
       force: true
 
+    ~/.gnupg/gpg-agent.conf:
+      path: config/gpg-agent
+      force: true
+      create: true
+
     ~/.hushlogin:
       path: config/hushlogin
       force: true
