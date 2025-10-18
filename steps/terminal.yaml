@@ -41,6 +41,8 @@
       force: true
       create: true
 
+    ~/.gitconfig: config/gitconfig
+
     ~/.hushlogin:
       path: config/hushlogin
       force: true
