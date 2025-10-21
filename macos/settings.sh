@@ -100,7 +100,8 @@ defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # --- GnuPG configuration ---
 
-# Disable keychain
+# Disable keychain for GnuPG
+defaults write org.gpgtools.common DisableKeychain -bool yes
 defaults write org.gpgtools.common DisableKeychain -bool yes
 
 # Restarting apps
