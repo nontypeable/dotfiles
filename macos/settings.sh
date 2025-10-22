@@ -59,6 +59,9 @@ defaults write com.apple.appstore InAppReviewEnabled -int 0
 # --- Maccy configuration
 # https://github.com/p0deje/Maccy
 
+# Automatically insert when selected
+defaults write org.p0deje.Maccy pasteByDefault true
+
 # History size
 defaults write org.p0deje.Maccy historySize 20
 
