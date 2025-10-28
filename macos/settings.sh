@@ -101,12 +101,6 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
-# --- GnuPG configuration ---
-
-# Disable keychain for GnuPG
-defaults write org.gpgtools.common DisableKeychain -bool yes
-defaults write org.gpgtools.common DisableKeychain -bool yes
-
 # Restarting apps
 echo 'Restarting apps...'
 killall Finder
