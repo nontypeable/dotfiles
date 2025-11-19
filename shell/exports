@@ -14,7 +14,7 @@ PATH="/usr/local/share/npm/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
 
 # Adds `cargo` binary files:
-PATH="$HOME/.cargo/bin:$PATH"
+PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 # --- macOS specific settings ---
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -46,5 +46,10 @@ export GPG_TTY="$(tty)" # for pinentry
 
 # Homebrew:
 export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
+
+# --- Version managers ---
+
+# `rustup`:
+source "$HOME/.cargo/env"
 
 export PATH

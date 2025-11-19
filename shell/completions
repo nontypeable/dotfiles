@@ -2,6 +2,9 @@
 
 # `completions` handles all custom auto-completions.
 
+# --- rustup ---
+fpath+=~/.zfunc
+
 # --- zsh options ---
 setopt globdots # Enable hidden files in completion
 
