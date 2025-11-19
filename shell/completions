@@ -5,6 +5,10 @@
 # --- rustup ---
 fpath+=~/.zfunc
 
+# Loading and initializing the Zsh auto-completion system
+autoload -U compinit
+compinit
+
 # --- zsh options ---
 setopt globdots # Enable hidden files in completion
 
