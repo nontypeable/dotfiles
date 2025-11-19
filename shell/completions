@@ -53,6 +53,19 @@ zstyle ':fzf-tab:complete:(kill|killall):*' fzf-preview \
 zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|expand):*' \
 	fzf-preview 'echo "${(P)word}" | fold -w 80'
 
+# --- zoxide completion ---
+_z () {
+  # I have a custom completion, because I like `z NAME<TAB>`
+  # and not `z NAME<SPACE><TAB>`
+  local cmds
+  cmds=( ${(uf)"$(zoxide query -l)"} ) 
+  _describe 'filenames' cmds
+}
+
+compdef _z z
+zstyle ':fzf-tab:complete:(\\|*/|)z:*' fzf-preview \
+  '_fzf_complete_realpath "$word"'
+
 # --- generic command completion ---
 # Enable basic completion for modern utilities that don't have native zsh completions
 compdef _gnu_generic fzf fd rg ag bat

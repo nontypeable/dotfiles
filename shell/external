@@ -16,3 +16,13 @@ export FZF_DEFAULT_OPTS='--layout=reverse-list --bind "ctrl-a:toggle" --bind "ct
 export FZF_CTRL_T_OPTS='--preview "_fzf_complete_realpath {}"'
 export FZF_ALT_C_OPTS='--preview "_fzf_complete_realpath {}"'
 export FZF_CTRL_R_OPTS='--reverse'
+
+# `zoxide` has an option to use `fzf` to provide completions natively,
+# but it works only for `z NAME<SPACE><TAB>`,
+# it does not work for `z NAME<TAB>`.
+eval "$(zoxide init zsh --no-cmd)"
+
+z() {
+	# I need this function to setup custom code completion for `zoxide`.
+	\__zoxide_z "$@"
+}
