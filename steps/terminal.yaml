@@ -42,6 +42,7 @@
       create: true
 
     ~/.gitconfig: config/gitconfig
+    ~/.gitignore: config/gitignore
 
     ~/.hushlogin:
       path: config/hushlogin

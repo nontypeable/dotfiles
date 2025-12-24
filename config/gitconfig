@@ -1,4 +1,5 @@
 [core]
+    excludesfile = ~/.gitignore
     autocrlf = input
     safecrlf = warn
     pager = delta
