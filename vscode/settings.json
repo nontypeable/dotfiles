@@ -1,0 +1,190 @@
+{
+    // Debug:
+    "debug.allowBreakpointsEverywhere": true,
+    "editor.glyphMargin": false, // hide breakpoints
+    "debug.console.closeOnEnd": true,
+
+    // Editor:
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 18,
+    "editor.stickyScroll.enabled": false,
+    "editor.showFoldingControls": "mouseover",
+    "explorer.openEditors.visible": 1,
+    "editor.cursorBlinking": "solid",
+    "editor.accessibilitySupport": "off",
+    "editor.codeLens": false,
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "editor.colorDecorators": false,
+    "editor.dragAndDrop": false,
+    "editor.folding": false,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "selection",
+    "editor.renderLineHighlight": "none",
+    "editor.hideCursorInOverviewRuler": false,
+    "explorer.compactFolders": false,
+    "editor.occurrencesHighlight": "off",
+    "editor.overviewRulerBorder": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.rulers": [80],
+    "editor.scrollBeyondLastLine": false,
+    "editor.snippetSuggestions": "none",
+    "editor.cursorSurroundingLines": 7,
+    "editor.useTabStops": true,
+    "editor.hover.enabled": "off",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.decorations.badges": false,
+    "extensions.ignoreRecommendations": true,
+    "diffEditor.renderSideBySide": false,
+    "breadcrumbs.enabled": false,
+    "window.commandCenter": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "workbench.hover.delay": 10000,
+    "editor.scrollbar.vertical": "auto",
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.copyWithSyntaxHighlighting": false,
+
+    // Do not touch my code:
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "editor.autoClosingOvertype": "never",
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.tabCompletion": "on",
+    "editor.suggestSelection": "recentlyUsed",
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.formatOnType": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.suggest.localityBonus": true,
+    "editor.lightbulb.enabled": "off",
+    "editor.guides.indentation": false,
+    "editor.pasteAs.preferences": ["text.plain"],
+
+    // Simple navigation:
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    // Search:
+    "search.quickAccess.preserveInput": true,
+    "search.quickOpen.includeSymbols": false,
+    "search.quickOpen.history.filterSortOrder": "recency",
+    "workbench.quickOpen.preserveInput": false,
+
+    // Files:
+    "[css]": {
+        "editor.colorDecorators": true
+    },
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.idea": true,
+        "**/.vscode": true,
+        "**/.mypy_cache": true,
+        "**/.venv": true,
+        "**/.coverage": true,
+        "**/htmlcoverage": true,
+        "**/docs/build": true
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+
+    // Telemetry:
+    "telemetry.telemetryLevel": "off",
+
+    // Terminal:
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+    "accessibility.signals.terminalBell": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "terminal.integrated.fontLigatures.enabled": false,
+    "terminal.integrated.sendKeybindingsToShell": true,
+    "terminal.integrated.suggest.enabled": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+
+    // Window:
+    "window.clickThroughInactive": false,
+    "window.newWindowDimensions": "maximized",
+    "workbench.editor.labelFormat": "medium",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.visible": false,
+    "workbench.tips.enabled": false,
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.tree.enableStickyScroll": false,
+    "workbench.sideBar.location": "right",
+    "workbench.editor.showIcons": false,
+    "workbench.editor.showTabs": "single",
+    "workbench.editor.decorations.badges": false,
+    "workbench.editor.decorations.colors": false,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "merge-conflict.autoNavigateNextConflict.enabled": false,
+
+    // Tools, extensions, and languages:
+    "problems.decorations.enabled": false,
+
+    "git.autofetch": false,
+    "git.showInlineOpenFileAction": false,
+    "git.autorefresh": true,
+    "git.decorations.enabled": true,
+    "git.openRepositoryInParentFolders": "never",
+    "git.blame.editorDecoration.enabled": false,
+
+    // Theme:
+    "editor.semanticHighlighting.enabled": false,
+    "workbench.colorCustomizations": {
+        "editorError.foreground": "#00000000",
+        "editorWarning.foreground": "#00000000"
+    },
+    "editor.unicodeHighlight.nonBasicASCII": false,
+
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+
+    "custom-ui-style.electron": {
+        "frame": false,
+        "transparent": true,
+        "titleBarStyle": "hidden",
+        "titleBarOverlay": {
+            "height": 35
+        }
+    },
+    // Hide unwanted elements from the UI:
+    "custom-ui-style.stylesheet": {
+        // Hide extra items:
+        ".monaco-toolbar, .quick-input-list .scrollbar, .quick-input-list .action-label": {
+            "visibility": "hidden !important",
+            "display": "none !important"
+        },
+        // Center the title with the filename:
+        ".monaco-workbench .editor-group-container>.title>.label-container>.title-label>.monaco-icon-label-container": {
+            "margin-left": "57px !important"
+        },
+        // Offset terminal title:
+        ".composite.title.has-composite-bar": {
+            "margin-left": "50px !important"
+        },
+    },
+    "custom-ui-style.external.imports": [
+        "file:///${userHome}/Library/Application Support/Code/User/plugin.js"
+    ]
+}

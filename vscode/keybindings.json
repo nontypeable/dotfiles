@@ -1,0 +1,64 @@
+[
+  // Navigation history
+  { "key": "ctrl+alt+left", "command": "workbench.action.navigateBack" },
+  { "key": "ctrl+alt+right", "command": "workbench.action.navigateForward" },
+  { "key": "ctrl+-", "command": "-workbench.action.navigateBack" },
+  { "key": "ctrl+shift+-", "command": "-workbench.action.navigateForward" },
+
+  // Multi-cursor
+  { "key": "shift+alt+up", "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" },
+  { "key": "shift+alt+down", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus" },
+  { "key": "alt+cmd+up", "command": "-editor.action.insertCursorAbove" },
+  { "key": "alt+cmd+down", "command": "-editor.action.insertCursorBelow" },
+
+  // Search and code navigation
+  { "key": "ctrl+f", "command": "workbench.action.quickTextSearch" },
+  { "key": "ctrl+f", "command": "-cursorRight" },
+  { "key": "ctrl+p", "command": "-cursorUp" },
+  { "key": "ctrl+n", "command": "-cursorDown" },
+  { "key": "f12", "command": "editor.action.goToDeclaration" },
+  { "key": "shift+f12", "command": "editor.action.referenceSearch.trigger" },
+  { "key": "f2", "command": "editor.action.rename", "when": "editorHasRenameProvider && editorTextFocus" },
+
+  // Hover and suggestions
+  { "key": "cmd+e", "command": "editor.action.showHover", "when": "editorTextFocus" },
+  { "key": "ctrl+i", "command": "editor.action.triggerSuggest", "when": "editorTextFocus && editorHasCompletionItemProvider" },
+  { "key": "cmd+e", "command": "-actions.findWithSelection" },
+  { "key": "cmd+i", "command": "-editor.action.triggerSuggest" },
+
+  // Files and paths
+  { "key": "shift+cmd+n", "command": "explorer.newFolder" },
+  { "key": "cmd+l", "command": "copyRelativeFilePath" },
+  { "key": "shift+cmd+n", "command": "-workbench.action.newWindow" },
+  { "key": "cmd+l", "command": "-expandLineSelection" },
+  { "key": "cmd+k p", "command": "-workbench.action.files.copyPathOfActiveFile" },
+
+  // Tabs and editors
+  { "key": "cmd+[", "command": "workbench.action.showPreviousWindowTab" },
+  { "key": "cmd+]", "command": "workbench.action.showNextWindowTab" },
+  { "key": "cmd+[", "command": "-editor.action.outdentLines" },
+  { "key": "cmd+]", "command": "-editor.action.indentLines" },
+  { "key": "cmd+w", "command": "workbench.action.closeActiveEditor" },
+  { "key": "shift+cmd+t", "command": "workbench.action.reopenClosedEditor" },
+  { "key": "cmd+d", "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" },
+  { "key": "ctrl+tab", "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" },
+
+  // Interface
+  { "key": "cmd+b", "command": "workbench.action.toggleSidebarVisibility" },
+  { "key": "cmd+b", "command": "-workbench.action.debug.continue" },
+  { "key": "cmd+\\", "command": "-workbench.action.splitEditor" },
+  { "key": "cmd+k cmd+\\", "command": "-workbench.action.splitEditorOrthogonal" },
+
+  // Settings
+  { "key": "cmd+,", "command": "workbench.action.openSettingsJson" },
+  { "key": "cmd+,", "command": "-workbench.action.openSettings" },
+
+  // AI / Copilot (disabled)
+  { "key": "cmd+i", "command": "-inlineChat.start" },
+  { "key": "cmd+i", "command": "-inlineChat.startWithCurrentLine" },
+  { "key": "cmd+k i", "command": "-inlineChat.startWithCurrentLine" },
+  { "key": "ctrl+cmd+i", "command": "-workbench.action.chat.open" },
+  { "key": "shift+cmd+i", "command": "-workbench.action.chat.openAgent" },
+  { "key": "cmd+i", "command": "-workbench.action.terminal.chat.start" },
+  { "key": "ctrl+cmd+i", "command": "-workbench.panel.chat" }
+]

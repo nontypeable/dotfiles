@@ -1,0 +1,11 @@
+---
+- link:
+      "~/Library/Application Support/Code/User/settings.json":
+          path: vscode/settings.json
+          create: true
+      "~/Library/Application Support/Code/User/keybindings.json":
+          path: vscode/keybindings.json
+          create: true
+      "~/Library/Application Support/Code/User/plugin.js":
+          path: vscode/plugin.js
+          create: true
