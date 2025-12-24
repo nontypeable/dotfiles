@@ -101,6 +101,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
+# --- GnuPG ---
+defaults write org.gpgtools.pinentry-mac DisableKeychain -bool YES
+
 # Restarting apps
 echo 'Restarting apps...'
 killall Finder
