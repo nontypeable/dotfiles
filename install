@@ -18,15 +18,16 @@ run_dotbot() {
 
 	"$BASEDIR/$DOTBOT_DIR/$DOTBOT_BIN" \
 		-d "$BASEDIR" \
+        --plugin-dir dotbot-brewfile \
 		-c "$config" "${ARGS[@]}"
 }
 
 dotbot_configs=(
-	"steps/terminal.yaml"
+    "steps/terminal.yaml"
+	"steps/dependencies.yaml"
 	"steps/vscode.yaml"
 )
 
 for config in "${dotbot_configs[@]}"; do
 	run_dotbot "$config"
 done
-
