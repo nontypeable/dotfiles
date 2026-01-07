@@ -59,7 +59,7 @@ Temporary Items
 # --- Rust ---
 
 # Cargo build output
-/target/
+target/
 debug/
 
 # MSVC debug symbols
