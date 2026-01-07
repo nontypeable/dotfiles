@@ -62,6 +62,10 @@ brew "openjdk"
 brew "maven"
 # Minimalist GNU for Windows and GCC cross-compilers
 brew "mingw-w64"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Media player based on MPlayer and mplayer2
+brew "mpv"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Utility for managing network connections
@@ -94,6 +98,8 @@ brew "pre-commit"
 brew "pyright"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
 # Rust toolchain installer
 brew "rustup"
 # Static analysis and lint tool, for (ba)sh scripts
@@ -116,8 +122,6 @@ brew "wget"
 brew "wrk"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
-# Feature-rich command-line audio/video downloader
-brew "yt-dlp"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Voice and text chat software
@@ -169,6 +173,7 @@ cask "zen"
 cask "zoom"
 mas "CleanMyKeyboard", id: 6468120888
 mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
 mas "V2BOX", id: 6446814690
 vscode "editorconfig.editorconfig"
 vscode "golang.go"
@@ -180,4 +185,3 @@ vscode "ms-vscode.cpptools"
 vscode "rust-lang.rust-analyzer"
 vscode "subframe7536.custom-ui-style"
 vscode "vadimcn.vscode-lldb"
-cargo "cargo-generate"
