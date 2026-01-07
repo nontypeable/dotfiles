@@ -11,8 +11,10 @@
     gpgsign = true
 [push]
     default = simple
+[merge]
+    ff = false
 [fetch]
-    # Prune branches and tags that no longer exist remote. 
+    # Prune branches and tags that no longer exist remote.
     prune = true
     pruneTags = true
 [user]
@@ -32,7 +34,7 @@
     navigate = true
     inspect-raw-lines = false
     line-numbers = true
-    
+
     # visual
     file-style = none
     file-decoration-style = none
