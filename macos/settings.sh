@@ -102,7 +102,7 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # --- GnuPG ---
-defaults write org.gpgtools.pinentry-mac DisableKeychain -bool YES
+defaults write org.gpgtools.common DisableKeychain -bool yes
 
 # Restarting apps
 echo 'Restarting apps...'
