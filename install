@@ -25,6 +25,7 @@ run_dotbot() {
 dotbot_configs=(
     "steps/terminal.yaml"
 	"steps/dependencies.yaml"
+	"steps/nvim.yaml"
 	"steps/vscode.yaml"
 )
 
