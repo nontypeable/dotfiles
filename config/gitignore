@@ -138,4 +138,5 @@ docs/_build/
 
 # --- Misc ---
 *.log
-
+undodir/
+pyrightconfig.json
