@@ -23,17 +23,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	export CPPFLAGS="-I$(brew --prefix)/opt/openssl/include"
 	export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
 	export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig"
-
-	# Java setup:
-	if [[ -d "/opt/homebrew/opt/openjdk" ]]; then
-		export JAVA_HOME="/opt/homebrew/opt/openjdk"
-		PATH="$JAVA_HOME/bin:$PATH"
-	elif /usr/libexec/java_home &>/dev/null; then
-		export JAVA_HOME=$(/usr/libexec/java_home)
-		PATH="$JAVA_HOME/bin:$PATH"
-	else
-		echo "Warning: No Java Runtime found."
-	fi
 fi
 
 # --- General ---
@@ -46,10 +35,5 @@ export GPG_TTY="$(tty)" # for pinentry
 
 # Homebrew:
 export HOMEBREW_NO_ANALYTICS=1 # disables statistics that brew collects
-
-# --- Version managers ---
-
-# `rustup`:
-source "$HOME/.cargo/env"
 
 export PATH
