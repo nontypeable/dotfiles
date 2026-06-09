@@ -4,34 +4,27 @@ return {
     build = ":TSUpdate",
 
     config = function()
-        require("nvim-treesitter.configs").setup({
-            ensure_installed = {
-                "rust",
-                "python",
-                "c",
-                "cpp",
-                "go",
-                "javascript",
-                "typescript",
-                "tsx",
-                "json",
-                "jsonc",
-                "yaml",
-                "toml",
-                "lua",
-                "vim",
-                "vimdoc",
-                "query",
-                "markdown",
-                "bash",
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = {
+                "rust", "python", "c", "cpp", "go",
+                "javascript", "typescript", "tsx",
+                "json", "yaml", "toml",
+                "lua", "vim", "vimdoc", "query",
+                "markdown", "bash",
             },
-            sync_install = true,
-            auto_install = true,
-            highlight = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-            indent = { enable = false },
+            callback = function()
+                vim.treesitter.start()
+            end,
         })
+    end,
+
+    init = function()
+        require("nvim-treesitter").install({
+            "rust", "python", "c", "cpp", "go",
+            "javascript", "typescript", "tsx",
+            "json", "yaml", "toml",
+            "lua", "vim", "vimdoc", "query",
+            "markdown", "bash",
+        }):wait(300000)
     end,
 }
