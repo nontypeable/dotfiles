@@ -26,18 +26,24 @@ brew "pixman"
 brew "catimg"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
+# Statistics utility to count lines of code
+brew "cloc"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # USB programmer
 brew "dfu-util"
+# Functional metaprogramming aware language built on Erlang VM
+brew "elixir"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # AST-based pattern checker for JavaScript
 brew "eslint"
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+# Powerful, lightweight programming language
+brew "lua"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -56,8 +62,6 @@ brew "fzf"
 brew "gcc"
 # GNU database manager
 brew "gdbm"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # OCR (Optical Character Recognition) engine
@@ -80,22 +84,24 @@ brew "gobuster"
 brew "gopls"
 # Command-line hex viewer
 brew "hexyl"
+# Improved top (interactive process viewer)
+brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Modern load testing tool, using Go and JavaScript
 brew "k6"
 # Style and grammar checker
 brew "languagetool"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Portable Foreign Function Interface library
 brew "libffi"
+# Postgres C API library
+brew "libpq"
 # General purpose TCP-IP emulator
 brew "libslirp"
 # Vorbis general audio compression codec
 brew "libvorbis"
-# Next-gen compiler infrastructure
-brew "llvm"
-# Powerful, lightweight programming language
-brew "lua"
 # Mac App Store command-line interface
 brew "mas"
 # Minimalist GNU for Windows and GCC cross-compilers
@@ -104,6 +110,8 @@ brew "mingw-w64"
 brew "yt-dlp"
 # Media player based on MPlayer and mplayer2
 brew "mpv"
+# Incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Utility for managing network connections
@@ -186,8 +194,10 @@ brew "zoxide"
 cask "alacritty"
 # Desktop password and login vault
 cask "bitwarden"
-# Brings the power of Copilot coding agent directly to your terminal
-cask "copilot-cli"
+# Free and open-source web browser
+cask "chromium"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
@@ -195,6 +205,8 @@ cask "docker-desktop"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
+# Desktop client for GitHub repositories
+cask "github"
 # Git client focusing on productivity
 cask "gitkraken"
 # Web browser
@@ -209,14 +221,14 @@ cask "keycastr"
 cask "mac-mouse-fix"
 # Clipboard manager
 cask "maccy"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Get up and running with large language models locally
 cask "ollama-app"
 # Android file transfer
 cask "openmtp"
-# Client program for the OpenVPN Access Server
-cask "openvpn-connect"
 # Utility to uninstall apps and remove leftover files from old/uninstalled apps
 cask "pearcleaner"
 # Collaboration platform for API development
@@ -240,6 +252,7 @@ cask "zen"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "CleanMyKeyboard", id: 6468120888
+mas "Happ", id: 6746188973
 mas "Keynote", id: 361285480
 mas "Numbers", id: 361304891
 mas "Outline", id: 1356178125
@@ -248,6 +261,7 @@ mas "Sweet Home 3D", id: 669289700
 mas "uBlock Origin Lite", id: 6745342698
 mas "V2BOX", id: 6446814690
 mas "WireGuard", id: 1451685025
+mas "Xcode", id: 497799835
 vscode "editorconfig.editorconfig"
 vscode "golang.go"
 vscode "ms-python.debugpy"
