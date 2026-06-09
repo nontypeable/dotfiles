@@ -6,11 +6,23 @@ return {
     config = function()
         vim.api.nvim_create_autocmd("FileType", {
             pattern = {
-                "rust", "python", "c", "cpp", "go",
-                "javascript", "typescript", "tsx",
-                "json", "yaml", "toml",
-                "lua", "vim", "vimdoc", "query",
-                "markdown", "bash",
+                "rust",
+                "python",
+                "c",
+                "cpp",
+                "go",
+                "javascript",
+                "typescript",
+                "tsx",
+                "json",
+                "yaml",
+                "toml",
+                "lua",
+                "vim",
+                "vimdoc",
+                "query",
+                "markdown",
+                "bash",
             },
             callback = function()
                 vim.treesitter.start()
@@ -19,12 +31,26 @@ return {
     end,
 
     init = function()
-        require("nvim-treesitter").install({
-            "rust", "python", "c", "cpp", "go",
-            "javascript", "typescript", "tsx",
-            "json", "yaml", "toml",
-            "lua", "vim", "vimdoc", "query",
-            "markdown", "bash",
-        }):wait(300000)
+        require("nvim-treesitter")
+            .install({
+                "rust",
+                "python",
+                "c",
+                "cpp",
+                "go",
+                "javascript",
+                "typescript",
+                "tsx",
+                "json",
+                "yaml",
+                "toml",
+                "lua",
+                "vim",
+                "vimdoc",
+                "query",
+                "markdown",
+                "bash",
+            })
+            :wait(300000)
     end,
 }
