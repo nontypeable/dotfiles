@@ -1,6 +1,10 @@
 ---
 - link:
     "~/.config/alacritty/alacritty.toml":
-      path: config/alacritty.toml
+      path: alacritty/alacritty.toml
+      force: true
+      create: true
+    "~/.config/alacritty/kanagawa-wave.toml":
+      path: alacritty/kanagawa-wave.toml
       force: true
       create: true
