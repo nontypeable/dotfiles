@@ -31,26 +31,24 @@ return {
     end,
 
     init = function()
-        require("nvim-treesitter")
-            .install({
-                "rust",
-                "python",
-                "c",
-                "cpp",
-                "go",
-                "javascript",
-                "typescript",
-                "tsx",
-                "json",
-                "yaml",
-                "toml",
-                "lua",
-                "vim",
-                "vimdoc",
-                "query",
-                "markdown",
-                "bash",
-            })
-            :wait(300000)
+        require("nvim-treesitter").install({
+            "rust",
+            "python",
+            "c",
+            "cpp",
+            "go",
+            "javascript",
+            "typescript",
+            "tsx",
+            "json",
+            "yaml",
+            "toml",
+            "lua",
+            "vim",
+            "vimdoc",
+            "query",
+            "markdown",
+            "bash",
+        })
     end,
 }
