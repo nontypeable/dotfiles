@@ -36,6 +36,8 @@ brew "coreutils"
 brew "dfu-util"
 # Functional metaprogramming aware language built on Erlang VM
 brew "elixir"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 # AST-based pattern checker for JavaScript
@@ -48,8 +50,8 @@ brew "lua"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Low-level access to audio, keyboard, mouse, joystick, and graphics
-brew "sdl2"
+# SDL2 compatibility layer that uses SDL3 behind the scenes
+brew "sdl2-compat"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Ogg Bitstream Library
@@ -94,8 +96,6 @@ brew "k6"
 brew "languagetool"
 # Simple terminal UI for git commands
 brew "lazygit"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Postgres C API library
 brew "libpq"
 # General purpose TCP-IP emulator
@@ -120,6 +120,8 @@ brew "netcat"
 brew "ninja"
 # Port scanning utility for large networks
 brew "nmap"
+# General-purpose speech recognition model
+brew "openai-whisper"
 # Implementation of the OpenAL 3D audio API
 brew "openal-soft"
 # 7-Zip (high compression file archiver) implementation
