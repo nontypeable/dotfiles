@@ -26,7 +26,6 @@ return {
                     "ts_ls",
                     "lua_ls",
                 },
-                automatic_installation = true,
             })
         end,
     },

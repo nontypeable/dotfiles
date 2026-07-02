@@ -20,7 +20,9 @@ vim.opt.wrap = true
 -- Files, history, encoding, clipboard
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.config/nvim/undodir"
+local undodir = vim.fn.stdpath("state") .. "/undodir"
+vim.opt.undodir = undodir
+vim.fn.mkdir(undodir, "p")
 vim.opt.undofile = true
 vim.opt.clipboard:append("unnamedplus")
 vim.opt.encoding = "utf-8"
@@ -34,3 +36,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
+
+-- Editing comfort
+vim.opt.completeopt = { "menuone", "noselect", "noinsert" }
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 400
