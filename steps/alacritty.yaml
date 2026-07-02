@@ -1,0 +1,6 @@
+---
+- link:
+    "~/.config/alacritty/alacritty.toml":
+      path: config/alacritty.toml
+      force: true
+      create: true

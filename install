@@ -27,6 +27,7 @@ dotbot_configs=(
 	"steps/dependencies.yaml"
 	"steps/nvim.yaml"
 	"steps/vscode.yaml"
+    "steps/alacritty.yaml"
 )
 
 for config in "${dotbot_configs[@]}"; do
