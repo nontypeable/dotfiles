@@ -7,9 +7,11 @@ return {
             "MunifTanjim/nui.nvim",
             "nvim-tree/nvim-web-devicons",
         },
-        lazy = false,
+        cmd = "Neotree",
+        keys = {
+            { "<leader>`", "<cmd>Neotree toggle<CR>", desc = "Toggle neo-tree" },
+        },
         config = function()
-            vim.g.loaded_netrwPlugin = 0
             require("neo-tree").setup({
                 close_if_last_window = true,
                 enable_git_status = false,
@@ -23,7 +25,6 @@ return {
                     },
                     hijack_netrw_behavior = "disabled",
                 },
-                vim.keymap.set("n", "<leader>`", "<cmd>Neotree toggle<CR>"),
             })
         end,
     },

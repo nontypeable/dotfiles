@@ -14,7 +14,7 @@ return {
             local capabilities = cmp_nvim_lsp.default_capabilities()
 
             local on_attach = function(_, bufnr)
-                local opts = { buffer = bufnr, noremap = true, silent = true }
+                local opts = { buffer = bufnr, silent = true }
 
                 vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
                 vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
@@ -35,10 +35,14 @@ return {
                 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
             end
 
-            -- Rust
-            vim.lsp.config("rust-analyzer", {
+            -- Defaults applied to every enabled server
+            vim.lsp.config("*", {
                 capabilities = capabilities,
                 on_attach = on_attach,
+            })
+
+            -- Rust
+            vim.lsp.config("rust_analyzer", {
                 root_markers = { "Cargo.toml", ".git" },
                 settings = {
                     ["rust-analyzer"] = {
@@ -49,8 +53,6 @@ return {
 
             -- Python
             vim.lsp.config("pyright", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 root_markers = {
                     "pyproject.toml",
                     "pyrightconfig.json",
@@ -64,29 +66,21 @@ return {
 
             -- C / C++
             vim.lsp.config("clangd", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 root_markers = { "compile_commands.json", ".git" },
             })
 
             -- Go
             vim.lsp.config("gopls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 root_markers = { "go.mod", ".git" },
             })
 
             -- JS / TS
             vim.lsp.config("ts_ls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
                 root_markers = { "package.json", ".git" },
             })
 
             -- Lua
-            vim.lsp.config("lua-ls", {
-                capabilities = capabilities,
-                on_attach = on_attach,
+            vim.lsp.config("lua_ls", {
                 root_markers = { ".luarc.json", ".git" },
                 settings = {
                     Lua = {
@@ -98,12 +92,12 @@ return {
             })
 
             vim.lsp.enable({
-                "rust-analyzer",
+                "rust_analyzer",
                 "pyright",
                 "clangd",
                 "gopls",
                 "ts_ls",
-                "lua-ls",
+                "lua_ls",
             })
         end,
     },

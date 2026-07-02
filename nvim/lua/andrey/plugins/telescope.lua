@@ -5,12 +5,18 @@ return {
         "nvim-lua/plenary.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+    cmd = "Telescope",
+    keys = {
+        { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find files" },
+        { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Live grep" },
+    },
 
     config = function()
         local actions = require("telescope.actions")
 
         require("telescope").setup({
             defaults = {
+                file_ignore_patterns = { ".git", "target", ".venv", "node_modules" },
                 mappings = {
                     i = {
                         ["<C-j>"] = actions.move_selection_next,
@@ -29,7 +35,6 @@ return {
                     },
                 },
             },
-            file_ignore_patterns = { ".git", "target", ".venv", "node_modules" },
             pickers = {
                 find_files = {
                     hidden = true, -- show hidden files
@@ -38,10 +43,5 @@ return {
         })
 
         require("telescope").load_extension("fzf")
-
-        local builtin = require("telescope.builtin")
-
-        vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-        vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
     end,
 }
