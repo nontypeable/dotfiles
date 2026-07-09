@@ -32,6 +32,8 @@ brew "cloc"
 brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# TIFF library and utilities
+brew "libtiff"
 # USB programmer
 brew "dfu-util"
 # Functional metaprogramming aware language built on Erlang VM
@@ -90,8 +92,6 @@ brew "hexyl"
 brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
-# Modern load testing tool, using Go and JavaScript
-brew "k6"
 # Style and grammar checker
 brew "languagetool"
 # Simple terminal UI for git commands
@@ -104,8 +104,6 @@ brew "libslirp"
 brew "libvorbis"
 # Mac App Store command-line interface
 brew "mas"
-# Minimalist GNU for Windows and GCC cross-compilers
-brew "mingw-w64"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Media player based on MPlayer and mplayer2
@@ -114,8 +112,6 @@ brew "mpv"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Utility for managing network connections
-brew "netcat"
 # Small build system for use with gyp or CMake
 brew "ninja"
 # Port scanning utility for large networks
@@ -142,8 +138,6 @@ brew "pinentry-mac"
 brew "pipx"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
-# Framework for managing multi-language pre-commit hooks
-brew "pre-commit"
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 # Static type checker for Python
@@ -170,22 +164,16 @@ brew "stylua"
 brew "syncthing", restart_service: :changed
 # TOML toolkit written in Rust
 brew "taplo"
-# User interface to the TELNET protocol
-brew "telnet"
 # Enables extra languages support for Tesseract
 brew "tesseract-lang"
 # Powerful free data recovery utility
 brew "testdisk"
-# Code-search similar to ack
-brew "the_silver_searcher"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
 # Internet file retriever
 brew "wget"
 # Library to create, extract, and modify Windows Imaging files
 brew "wimlib"
-# HTTP benchmarking tool
-brew "wrk"
 # ISO9660+RR manipulation tool
 brew "xorriso"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
@@ -215,8 +203,6 @@ cask "gitkraken"
 cask "google-chrome"
 # Menu bar application that displays the CPU speed limit due to thermal issues
 cask "hot"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Open-source keystroke visualiser
 cask "keycastr"
 # Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
@@ -259,11 +245,8 @@ mas "Keynote", id: 361285480
 mas "Numbers", id: 361304891
 mas "Outline", id: 1356178125
 mas "Pages", id: 361309726
-mas "Sweet Home 3D", id: 669289700
 mas "uBlock Origin Lite", id: 6745342698
-mas "V2BOX", id: 6446814690
 mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
 vscode "editorconfig.editorconfig"
 vscode "golang.go"
 vscode "ms-python.debugpy"
@@ -276,4 +259,3 @@ vscode "subframe7536.custom-ui-style"
 vscode "vadimcn.vscode-lldb"
 go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
 go "github.com/pressly/goose/v3/cmd/goose"
-go "github.com/swaggo/swag/v2/cmd/swag"

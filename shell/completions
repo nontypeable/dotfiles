@@ -27,7 +27,7 @@ zstyle ':completion:*' ignore-parents 'parent pwd directory'
 zstyle ':completion:*' ignored-patterns ".|..|.DS_Store|.localized|**/.|**/..|**/.DS_Store|**/.localized|**/.git|**/node_modules|**/__pycache__|**/*.pyc"
 
 # --- file-based commands preview ---
-zstyle ":fzf-tab:complete:(ls|gls|cat|bat|code|rm|cp|mv|ln|nvim|vim|tail|head|less|more|source|file|find|grep|rg|ag|fd|sed|awk|touch|mkdir|chmod|chown):*" fzf-preview '_fzf_complete_realpath $realpath'
+zstyle ":fzf-tab:complete:(ls|gls|cat|bat|code|rm|cp|mv|ln|nvim|vim|tail|head|less|more|source|file|find|grep|rg|fd|sed|awk|touch|mkdir|chmod|chown):*" fzf-preview '_fzf_complete_realpath $realpath'
 
 # --- make completion ---
 zstyle ':fzf-tab:complete:make:*' fzf-preview \
@@ -72,4 +72,4 @@ zstyle ':fzf-tab:complete:(\\|*/|)z:*' fzf-preview \
 
 # --- generic command completion ---
 # Enable basic completion for modern utilities that don't have native zsh completions
-compdef _gnu_generic fzf fd rg ag bat
+compdef _gnu_generic fzf fd rg bat
